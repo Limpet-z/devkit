@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>simplebar-content</title>
+</head>
+<body>
+<div class="sidebar-content js-simplebar" th:fragment="sidebar-content">
+    <a class="sidebar-brand" th:href="@{/dashboard}">
+        <span class="align-middle">Asset Unified System</span>
+    </a>
+
+    <ul class="sidebar-nav">
+        <li class="sidebar-header">
+            Pages
+        </li>
+
+        <li class="sidebar-item active">
+            <a class="sidebar-link" th:href="@{/dashboard}">
+                <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
+            </a>
+        </li>
+
+        <li class="sidebar-item">
+            <a class="sidebar-link" th:href="@{/market}">
+                <i class="align-middle" data-feather="trending-up"></i> <span class="align-middle">Market</span>
+            </a>
+        </li>
+
+        <li class="sidebar-item">
+            <a class="sidebar-link" th:href="@{/accounts}">
+                <i class="align-middle" data-feather="users"></i> <span class="align-middle">Accounts</span>
+            </a>
+        </li>
+
+        <li class="sidebar-item">
+            <a class="sidebar-link" th:href="@{/profile}">
+                <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
+            </a>
+        </li>
+        <li class="sidebar-item">
+            <a class="sidebar-link" th:href="@{/payments}">
+                <i class="align-middle" data-feather="credit-card"></i> <span class="align-middle">Payments</span>
+            </a>
+        </li>
+
+        <li class="sidebar-header">
+            Tools & Components
+        </li>
+
+        <li class="sidebar-item">
+            <a class="sidebar-link" href="#">
+                <i class="align-middle" data-feather="square"></i> <span class="align-middle">Buttons</span>
+            </a>
+        </li>
+
+        <li class="sidebar-item">
+            <a class="sidebar-link" href="#">
+                <i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Forms</span>
+            </a>
+        </li>
+
+        <li class="sidebar-item">
+            <a class="sidebar-link" href="#">
+                <i class="align-middle" data-feather="grid"></i> <span class="align-middle">Cards</span>
+            </a>
+        </li>
+
+        <li class="sidebar-item">
+            <a class="sidebar-link" href="ui-typography.html">
+                <i class="align-middle" data-feather="align-left"></i> <span
+                    class="align-middle">Typography</span>
+            </a>
+        </li>
+
+        <li class="sidebar-item">
+            <a class="sidebar-link" href="icons-feather.html">
+                <i class="align-middle" data-feather="coffee"></i> <span class="align-middle">Icons</span>
+            </a>
+        </li>
+
+        <li class="sidebar-header">
+            Plugins & Addons
+        </li>
+
+        <li class="sidebar-item">
+            <a class="sidebar-link" href="charts-chartjs.html">
+                <i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Charts</span>
+            </a>
+        </li>
+
+        <li class="sidebar-item">
+            <a class="sidebar-link" href="maps-google.html">
+                <i class="align-middle" data-feather="map"></i> <span class="align-middle">Maps</span>
+            </a>
+        </li>
+    </ul>
+</div>
+</body>
+
+
+</html>
