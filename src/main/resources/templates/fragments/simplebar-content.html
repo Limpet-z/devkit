@@ -16,7 +16,7 @@
             Pages
         </li>
 
-        <li class="sidebar-item active">
+        <li class="sidebar-item">
             <a class="sidebar-link" th:href="@{/dashboard}">
                 <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
             </a>
@@ -35,7 +35,7 @@
         </li>
 
         <li class="sidebar-item">
-            <a class="sidebar-link" th:href="@{/profile}">
+            <a class="sidebar-link" th:href="@{/prof}">
                 <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
             </a>
         </li>
@@ -45,56 +45,16 @@
             </a>
         </li>
 
-        <li class="sidebar-header">
-            Tools & Components
+        <li class="sidebar-header" sec:authorize="hasRole('ADMIN')">
+            For Admin Only
         </li>
 
-        <li class="sidebar-item">
-            <a class="sidebar-link" href="#">
-                <i class="align-middle" data-feather="square"></i> <span class="align-middle">Buttons</span>
+        <li class="sidebar-item" sec:authorize="hasRole('ADMIN')">
+            <a class="sidebar-link" th:href="@{/create-news}">
+                <i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Create News</span>
             </a>
         </li>
 
-        <li class="sidebar-item">
-            <a class="sidebar-link" href="#">
-                <i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Forms</span>
-            </a>
-        </li>
-
-        <li class="sidebar-item">
-            <a class="sidebar-link" href="#">
-                <i class="align-middle" data-feather="grid"></i> <span class="align-middle">Cards</span>
-            </a>
-        </li>
-
-        <li class="sidebar-item">
-            <a class="sidebar-link" href="ui-typography.html">
-                <i class="align-middle" data-feather="align-left"></i> <span
-                    class="align-middle">Typography</span>
-            </a>
-        </li>
-
-        <li class="sidebar-item">
-            <a class="sidebar-link" href="icons-feather.html">
-                <i class="align-middle" data-feather="coffee"></i> <span class="align-middle">Icons</span>
-            </a>
-        </li>
-
-        <li class="sidebar-header">
-            Plugins & Addons
-        </li>
-
-        <li class="sidebar-item">
-            <a class="sidebar-link" href="charts-chartjs.html">
-                <i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Charts</span>
-            </a>
-        </li>
-
-        <li class="sidebar-item">
-            <a class="sidebar-link" href="maps-google.html">
-                <i class="align-middle" data-feather="map"></i> <span class="align-middle">Maps</span>
-            </a>
-        </li>
     </ul>
 </div>
 </body>

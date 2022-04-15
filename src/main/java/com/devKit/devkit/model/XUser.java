@@ -2,23 +2,23 @@ package com.devKit.devkit.model;
 
 import lombok.Data;
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-@Data
 @Table(name = "users")
-public class XUser {
-    @Id
-    @Column(name = "id")
-    private Long id;
+@Data
+public class XUser extends BaseEntity{
 
-    @Column(name = "username")
-    private String username;
+    @Column(name = "name")
+    private String name;
 
     @Column(name = "email")
     private String email;
+
     @Column(name = "password")
     private String password;
 
     @Column(name = "role")
     private String role;
+
 }
