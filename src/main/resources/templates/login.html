@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,13 +8,13 @@
     <meta name="author" content="Tony">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="shortcut icon" href="/static/img/icons/icon-48x48.png">
-    <link rel="shortcut icon" th:href="@{/img/icons/icon-48x48.png}">
-    <link rel="canonical" href="https://demo-basic.adminkit.io/pages-sign-in.html"/>
+    <link rel="shortcut icon" href="../../img/icons/icon-48x48.png">
+    <link type="icon/css" rel="shortcut icon" th:href="@{/img/icons/icon-48x48.png}">
+    <link rel="canonical" href="https://demo-basic.adminkit.io/">
 
-    <title>Login</title>
+    <title>Dashboard</title>
 
-    <link href="/static/css/app.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
     <link th:href="@{/css/app.css}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
@@ -51,9 +51,7 @@
                                             <a href="#">Forgot password?</a>
                                         </small>
                                     </div>
-                                    <div class="text-center mt-3">
-                                        <button type="submit">Login</button>
-                                    </div>
+                                    <button type="submit">Login</button>
                                 </form>
                             </div>
                         </div>
@@ -64,9 +62,5 @@
         </div>
     </div>
 </main>
-
-<script src="js/app.js"></script>
-
 </body>
-
 </html>

@@ -1,4 +1,4 @@
-package com.devKit.devkit.controller.admin;
+package com.devKit.devkit.engine;
 
 import com.devKit.devkit.model.XUser;
 import com.devKit.devkit.repo.UserRepositoryJPA;
@@ -7,27 +7,21 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-public class NewsController {
+public class CreateInvoice {
     private final UserRepositoryJPA userRepositoryJPA;
 
-    public NewsController(UserRepositoryJPA userRepositoryJPA) {
+    public CreateInvoice(UserRepositoryJPA userRepositoryJPA) {
         this.userRepositoryJPA = userRepositoryJPA;
     }
 
-    @GetMapping("/create-news")
+    @GetMapping("/create-invoices")
     public String mainPage(Model model) {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         XUser xUser = userRepositoryJPA.findByEmail(user.getUsername());
 
         model.addAttribute("xUser", xUser);
-        return "admin/createNews";
-    }
-
-    @PostMapping("/create-news")
-    private String createNews(Model model) {
-        return null;
+        return "invoices";
     }
 }

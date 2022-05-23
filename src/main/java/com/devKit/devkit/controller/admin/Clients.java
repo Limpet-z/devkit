@@ -7,27 +7,21 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-public class NewsController {
-    private final UserRepositoryJPA userRepositoryJPA;
+public class Clients {
 
-    public NewsController(UserRepositoryJPA userRepositoryJPA) {
+    private final UserRepositoryJPA userRepositoryJPA;
+    public Clients(UserRepositoryJPA userRepositoryJPA) {
         this.userRepositoryJPA = userRepositoryJPA;
     }
 
-    @GetMapping("/create-news")
+    @GetMapping("/clients")
     public String mainPage(Model model) {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         XUser xUser = userRepositoryJPA.findByEmail(user.getUsername());
 
         model.addAttribute("xUser", xUser);
-        return "admin/createNews";
-    }
-
-    @PostMapping("/create-news")
-    private String createNews(Model model) {
-        return null;
+        return "admin/clients";
     }
 }

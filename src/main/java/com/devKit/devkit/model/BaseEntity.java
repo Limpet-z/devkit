@@ -1,20 +1,20 @@
 package com.devKit.devkit.model;
 
 import lombok.Data;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
+import lombok.NonNull;
+import org.jetbrains.annotations.NotNull;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
+import java.util.UUID;
 
 @MappedSuperclass
 @Data
 public class BaseEntity implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+
+    protected String id;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status")

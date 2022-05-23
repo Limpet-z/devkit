@@ -1,4 +1,4 @@
-package com.devKit.devkit.controller.admin;
+package com.devKit.devkit.controller.create;
 
 import com.devKit.devkit.model.XUser;
 import com.devKit.devkit.repo.UserRepositoryJPA;
@@ -10,24 +10,29 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-public class NewsController {
+public class CreateNewProject {
+
     private final UserRepositoryJPA userRepositoryJPA;
 
-    public NewsController(UserRepositoryJPA userRepositoryJPA) {
+    public CreateNewProject(UserRepositoryJPA userRepositoryJPA) {
         this.userRepositoryJPA = userRepositoryJPA;
     }
 
-    @GetMapping("/create-news")
-    public String mainPage(Model model) {
+    @GetMapping("/create")
+    private String createMethodGET(Model model) {
+
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         XUser xUser = userRepositoryJPA.findByEmail(user.getUsername());
 
         model.addAttribute("xUser", xUser);
-        return "admin/createNews";
+        return "admin/createProject";
     }
 
-    @PostMapping("/create-news")
-    private String createNews(Model model) {
-        return null;
+    @PostMapping("/create-project")
+    private String createMethodPOST(Model model) {
+
+
+        return "market";
     }
+
 }
