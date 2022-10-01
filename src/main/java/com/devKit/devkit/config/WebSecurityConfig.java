@@ -42,7 +42,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginProcessingUrl("/do-login")
                 .usernameParameter("email")
                 .passwordParameter("password")
-                .defaultSuccessUrl("/index")
+                .defaultSuccessUrl("/test-dashboard")
                 .and().logout().logoutUrl("/logout").permitAll()
                 .logoutSuccessUrl("/login")
                 .invalidateHttpSession(true)
