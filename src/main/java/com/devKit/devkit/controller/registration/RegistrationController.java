@@ -1,4 +1,4 @@
-package com.devKit.devkit.controller;
+package com.devKit.devkit.controller.registration;
 
 import com.devKit.devkit.model.XUser;
 import com.devKit.devkit.repo.UserRepositoryJPA;

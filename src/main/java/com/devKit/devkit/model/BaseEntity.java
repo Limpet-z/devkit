@@ -13,7 +13,6 @@ import java.util.UUID;
 public class BaseEntity implements Serializable {
 
     @Id
-
     protected String id;
 
     @Enumerated(EnumType.STRING)

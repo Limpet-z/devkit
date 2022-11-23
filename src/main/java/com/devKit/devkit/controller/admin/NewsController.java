@@ -20,7 +20,7 @@ public class NewsController {
     @GetMapping("/create-news")
     public String mainPage(Model model) {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        XUser xUser = userRepositoryJPA.findByEmail(user.getUsername());
+        XUser xUser = userRepositoryJPA.findByErc20(user.getUsername());
 
         model.addAttribute("xUser", xUser);
         return "admin/createNews";

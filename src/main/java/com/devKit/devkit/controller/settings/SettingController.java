@@ -1,4 +1,4 @@
-package com.devKit.devkit.controller;
+package com.devKit.devkit.controller.settings;
 
 import com.devKit.devkit.model.XUser;
 import com.devKit.devkit.repo.UserRepositoryJPA;
@@ -19,7 +19,7 @@ public class SettingController {
     @GetMapping("/settings")
     public String mainPage(Model model) {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        XUser xUser = userRepositoryJPA.findByEmail(user.getUsername());
+        XUser xUser = userRepositoryJPA.findByErc20(user.getUsername());
 
         model.addAttribute("xUser", xUser);
         return "setting";

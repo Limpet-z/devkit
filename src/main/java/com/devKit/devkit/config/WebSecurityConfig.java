@@ -40,7 +40,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and().formLogin().permitAll()
                 .loginPage("/login")
                 .loginProcessingUrl("/do-login")
-                .usernameParameter("email")
+                .usernameParameter("erc20")
                 .passwordParameter("password")
                 .defaultSuccessUrl("/test-dashboard")
                 .and().logout().logoutUrl("/logout").permitAll()

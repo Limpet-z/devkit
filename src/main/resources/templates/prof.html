@@ -12,7 +12,7 @@
     <link rel="shortcut icon" th:href="@{/img/icons/icon-48x48.png}">
     <link rel="canonical" href="https://demo-basic.adminkit.io/">
 
-    <title>Dashboard</title>
+    <title>Profile</title>
 
     <link href="/static/css/app.css" rel="stylesheet">
     <link th:href="@{/css/app.css}" rel="stylesheet">
@@ -25,12 +25,14 @@
     </nav>
     <div class="main">
         <nav th:insert="~{fragments/nav-bar :: nav-bar}"></nav>
-
         <main class="content">
             <div class="container-fluid p-0">
+
                 <div class="mb-3">
                     <h1 class="h3 d-inline align-middle">Profile</h1>
-                    <a class="badge bg-dark text-white ms-2" th:href="@{/settings}">Edit Profile</a>
+                    <a class="badge bg-dark text-white ms-2" href="upgrade-to-pro.html">
+                        Get more page examples
+                    </a>
                 </div>
                 <div class="row">
                     <div class="col-md-4 col-xl-3">
@@ -39,42 +41,50 @@
                                 <h5 class="card-title mb-0">Profile Details</h5>
                             </div>
                             <div class="card-body text-center">
-                                <img src="img/avatars/qwe123.png" alt="Christina Mason"
-                                     class="img-fluid rounded-circle mb-2" width="128" height="128"/>
-                                <h5 class="card-title mb-0" th:text="${xUser.getName()}">Christina Mason</h5>
-                                <div class="text-muted mb-2" th:text="${'Role: ' + xUser.getRole()}"></div>
-                                <div class="text-muted mb-2" th:text="${'ID: ' + xUser.getId()}"></div>
+                                <img src="img/avatars/avatar-4.jpg" alt="Christina Mason" class="img-fluid rounded-circle mb-2" width="128" height="128" />
+<!--                                <h5 class="card-title mb-0">Christina Mason</h5>-->
+                                <h5 class="card-title mb-0" th:text="${xUser.getEmail()}">Christina Mason</h5>
+                                <div class="text-muted mb-2">Lead Developer</div>
 
                                 <div>
                                     <a class="btn btn-primary btn-sm" href="#">Follow</a>
-                                    <a class="btn btn-primary btn-sm" href="#"><span
-                                            data-feather="message-square"></span> Message</a>
+                                    <a class="btn btn-primary btn-sm" href="#"><span data-feather="message-square"></span> Message</a>
                                 </div>
                             </div>
-                            <hr class="my-0"/>
+                            <hr class="my-0" />
                             <div class="card-body">
-                                <ul class="list-unstyled mb-0">
-                                    <h5 class="h6 card-title">Invoices</h5>
-                                    <li class="mb-1"><span data-feather="file" class="feather-sm me-1"></span>Your <a
-                                            th:href="@{/check-invoices}"> Invoices</a></li>
-                                    <li class="mb-1"><span data-feather="credit-card" class="feather-sm me-1"></span>Create
-                                        <a th:href="@{/create-invoices}"> Invoices</a></li>
-                                </ul>
+                                <h5 class="h6 card-title">Skills</h5>
+                                <a href="#" class="badge bg-primary me-1 my-1">HTML</a>
+                                <a href="#" class="badge bg-primary me-1 my-1">JavaScript</a>
+                                <a href="#" class="badge bg-primary me-1 my-1">Sass</a>
+                                <a href="#" class="badge bg-primary me-1 my-1">Angular</a>
+                                <a href="#" class="badge bg-primary me-1 my-1">Vue</a>
+                                <a href="#" class="badge bg-primary me-1 my-1">React</a>
+                                <a href="#" class="badge bg-primary me-1 my-1">Redux</a>
+                                <a href="#" class="badge bg-primary me-1 my-1">UI</a>
+                                <a href="#" class="badge bg-primary me-1 my-1">UX</a>
                             </div>
-                            <hr class="my-0"/>
+                            <hr class="my-0" />
                             <div class="card-body">
                                 <h5 class="h6 card-title">About</h5>
                                 <ul class="list-unstyled mb-0">
-                                    <li class="mb-1"><span data-feather="home" class="feather-sm me-1"></span> Lives in
-                                        <a href="#">Moscow, RU</a></li>
+                                    <li class="mb-1"><span data-feather="home" class="feather-sm me-1"></span> Lives in <a href="#">San Francisco, SA</a></li>
 
-                                    <li class="mb-1"><span data-feather="briefcase" class="feather-sm me-1"></span>
-                                        Works at <a href="#">GitHub</a></li>
-                                    <li class="mb-1"><span data-feather="map-pin" class="feather-sm me-1"></span> From
-                                        <a href="#">Boston</a></li>
+                                    <li class="mb-1"><span data-feather="briefcase" class="feather-sm me-1"></span> Works at <a href="#">GitHub</a></li>
+                                    <li class="mb-1"><span data-feather="map-pin" class="feather-sm me-1"></span> From <a href="#">Boston</a></li>
                                 </ul>
                             </div>
-                            <hr class="my-0"/>
+                            <hr class="my-0" />
+                            <div class="card-body">
+                                <h5 class="h6 card-title">Elsewhere</h5>
+                                <ul class="list-unstyled mb-0">
+                                    <li class="mb-1"><a href="#">staciehall.co</a></li>
+                                    <li class="mb-1"><a href="#">Twitter</a></li>
+                                    <li class="mb-1"><a href="#">Facebook</a></li>
+                                    <li class="mb-1"><a href="#">Instagram</a></li>
+                                    <li class="mb-1"><a href="#">LinkedIn</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
@@ -82,130 +92,111 @@
                         <div class="card">
                             <div class="card-header">
 
-                                <h5 class="card-title mb-0">News</h5>
+                                <h5 class="card-title mb-0">Activities</h5>
                             </div>
                             <div class="card-body h-100">
 
                                 <div class="d-flex align-items-start">
-                                    <img src="img/avatars/avatar-5.jpg" width="36" height="36"
-                                         class="rounded-circle me-2" alt="Vanessa Tucker">
+                                    <img src="img/avatars/avatar-5.jpg" width="36" height="36" class="rounded-circle me-2" alt="Vanessa Tucker">
                                     <div class="flex-grow-1">
                                         <small class="float-end text-navy">5m ago</small>
-                                        <strong>Anthony Stain</strong> about <strong>Brave rewards</strong><br/>
-                                        <small class="text-muted">Today 7:51 pm</small><br/>
+                                        <strong>Vanessa Tucker</strong> started following <strong>Christina Mason</strong><br />
+                                        <small class="text-muted">Today 7:51 pm</small><br />
 
                                     </div>
                                 </div>
 
-                                <hr/>
+                                <hr />
                                 <div class="d-flex align-items-start">
-                                    <img src="img/avatars/avatar.jpg" width="36" height="36" class="rounded-circle me-2"
-                                         alt="Charles Hall">
+                                    <img src="img/avatars/avatar.jpg" width="36" height="36" class="rounded-circle me-2" alt="Charles Hall">
                                     <div class="flex-grow-1">
                                         <small class="float-end text-navy">30m ago</small>
-                                        <strong>Charles Hall</strong> posted something on <strong>Christina
-                                        Mason</strong>'s timeline<br/>
+                                        <strong>Charles Hall</strong> posted something on <strong>Christina Mason</strong>'s timeline<br />
                                         <small class="text-muted">Today 7:21 pm</small>
 
                                         <div class="border text-sm text-muted p-2 mt-1">
-                                            Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam
-                                            semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc,
-                                            blandit vel, luctus
-                                            pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus.
-                                            Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante.
+                                            Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus
+                                            pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante.
                                         </div>
 
-                                        <a href="#" class="btn btn-sm btn-danger mt-1"><i class="feather-sm"
-                                                                                          data-feather="heart"></i> Like</a>
+                                        <a href="#" class="btn btn-sm btn-danger mt-1"><i class="feather-sm" data-feather="heart"></i> Like</a>
                                     </div>
                                 </div>
 
-                                <hr/>
+                                <hr />
                                 <div class="d-flex align-items-start">
-                                    <img src="img/avatars/avatar-4.jpg" width="36" height="36"
-                                         class="rounded-circle me-2" alt="Christina Mason">
+                                    <img src="img/avatars/avatar-4.jpg" width="36" height="36" class="rounded-circle me-2" alt="Christina Mason">
                                     <div class="flex-grow-1">
                                         <small class="float-end text-navy">1h ago</small>
-                                        <strong>Christina Mason</strong> posted a new blog<br/>
+                                        <strong>Christina Mason</strong> posted a new blog<br />
 
                                         <small class="text-muted">Today 6:35 pm</small>
                                     </div>
                                 </div>
 
-                                <hr/>
+                                <hr />
                                 <div class="d-flex align-items-start">
-                                    <img src="img/avatars/avatar-2.jpg" width="36" height="36"
-                                         class="rounded-circle me-2" alt="William Harris">
+                                    <img src="img/avatars/avatar-2.jpg" width="36" height="36" class="rounded-circle me-2" alt="William Harris">
                                     <div class="flex-grow-1">
                                         <small class="float-end text-navy">3h ago</small>
-                                        <strong>William Harris</strong> posted two photos on <strong>Christina
-                                        Mason</strong>'s timeline<br/>
+                                        <strong>William Harris</strong> posted two photos on <strong>Christina Mason</strong>'s timeline<br />
                                         <small class="text-muted">Today 5:12 pm</small>
 
                                         <div class="row g-0 mt-1">
                                             <div class="col-6 col-md-4 col-lg-4 col-xl-3">
-                                                <img src="img/photos/unsplash-1.jpg" class="img-fluid pe-2"
-                                                     alt="Unsplash">
+                                                <img src="img/photos/unsplash-1.jpg" class="img-fluid pe-2" alt="Unsplash">
                                             </div>
                                             <div class="col-6 col-md-4 col-lg-4 col-xl-3">
-                                                <img src="img/photos/unsplash-2.jpg" class="img-fluid pe-2"
-                                                     alt="Unsplash">
+                                                <img src="img/photos/unsplash-2.jpg" class="img-fluid pe-2" alt="Unsplash">
                                             </div>
                                         </div>
 
-                                        <a href="#" class="btn btn-sm btn-danger mt-1"><i class="feather-sm"
-                                                                                          data-feather="heart"></i> Like</a>
+                                        <a href="#" class="btn btn-sm btn-danger mt-1"><i class="feather-sm" data-feather="heart"></i> Like</a>
                                     </div>
                                 </div>
 
-                                <hr/>
+                                <hr />
                                 <div class="d-flex align-items-start">
-                                    <img src="img/avatars/avatar-2.jpg" width="36" height="36"
-                                         class="rounded-circle me-2" alt="William Harris">
+                                    <img src="img/avatars/avatar-2.jpg" width="36" height="36" class="rounded-circle me-2" alt="William Harris">
                                     <div class="flex-grow-1">
                                         <small class="float-end text-navy">1d ago</small>
-                                        <strong>William Harris</strong> started following <strong>Christina
-                                        Mason</strong><br/>
+                                        <strong>William Harris</strong> started following <strong>Christina Mason</strong><br />
                                         <small class="text-muted">Yesterday 3:12 pm</small>
 
                                         <div class="d-flex align-items-start mt-1">
                                             <a class="pe-3" href="#">
-                                                <img src="img/avatars/avatar-4.jpg" width="36" height="36"
-                                                     class="rounded-circle me-2" alt="Christina Mason">
+                                                <img src="img/avatars/avatar-4.jpg" width="36" height="36" class="rounded-circle me-2" alt="Christina Mason">
                                             </a>
                                             <div class="flex-grow-1">
                                                 <div class="border text-sm text-muted p-2 mt-1">
-                                                    Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.
-                                                    Maecenas nec odio et ante tincidunt tempus.
+                                                    Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus.
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <hr/>
+                                <hr />
                                 <div class="d-flex align-items-start">
-                                    <img src="img/avatars/avatar-4.jpg" width="36" height="36"
-                                         class="rounded-circle me-2" alt="Christina Mason">
+                                    <img src="img/avatars/avatar-4.jpg" width="36" height="36" class="rounded-circle me-2" alt="Christina Mason">
                                     <div class="flex-grow-1">
                                         <small class="float-end text-navy">1d ago</small>
-                                        <strong>Christina Mason</strong> posted a new blog<br/>
+                                        <strong>Christina Mason</strong> posted a new blog<br />
                                         <small class="text-muted">Yesterday 2:43 pm</small>
                                     </div>
                                 </div>
 
-                                <hr/>
+                                <hr />
                                 <div class="d-flex align-items-start">
-                                    <img src="img/avatars/avatar.jpg" width="36" height="36" class="rounded-circle me-2"
-                                         alt="Charles Hall">
+                                    <img src="img/avatars/avatar.jpg" width="36" height="36" class="rounded-circle me-2" alt="Charles Hall">
                                     <div class="flex-grow-1">
                                         <small class="float-end text-navy">1d ago</small>
-                                        <strong>Charles Hall</strong> started following <strong>Christina Mason</strong><br/>
+                                        <strong>Charles Hall</strong> started following <strong>Christina Mason</strong><br />
                                         <small class="text-muted">Yesterdag 1:51 pm</small>
                                     </div>
                                 </div>
 
-                                <hr/>
+                                <hr />
                                 <div class="d-grid">
                                     <a href="#" class="btn btn-primary">Load more</a>
                                 </div>
@@ -216,6 +207,7 @@
 
             </div>
         </main>
+
 
         <footer class="footer">
             <div class="container-fluid">
@@ -393,7 +385,73 @@
         });
     });
 </script>
-
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var markers = [{
+            coords: [31.230391, 121.473701],
+            name: "Shanghai"
+        },
+            {
+                coords: [28.704060, 77.102493],
+                name: "Delhi"
+            },
+            {
+                coords: [6.524379, 3.379206],
+                name: "Lagos"
+            },
+            {
+                coords: [35.689487, 139.691711],
+                name: "Tokyo"
+            },
+            {
+                coords: [23.129110, 113.264381],
+                name: "Guangzhou"
+            },
+            {
+                coords: [40.7127837, -74.0059413],
+                name: "New York"
+            },
+            {
+                coords: [34.052235, -118.243683],
+                name: "Los Angeles"
+            },
+            {
+                coords: [41.878113, -87.629799],
+                name: "Chicago"
+            },
+            {
+                coords: [51.507351, -0.127758],
+                name: "London"
+            },
+            {
+                coords: [40.416775, -3.703790],
+                name: "Madrid "
+            }
+        ];
+        var map = new jsVectorMap({
+            map: "world",
+            selector: "#world_map",
+            zoomButtons: true,
+            markers: markers,
+            markerStyle: {
+                initial: {
+                    r: 9,
+                    strokeWidth: 7,
+                    stokeOpacity: .4,
+                    fill: window.theme.primary
+                },
+                hover: {
+                    fill: window.theme.primary,
+                    stroke: window.theme.primary
+                }
+            },
+            zoomOnScroll: false
+        });
+        window.addEventListener("resize", () => {
+            map.updateSize();
+        });
+    });
+</script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         var date = new Date(Date.now() - 5 * 24 * 60 * 60 * 1000);

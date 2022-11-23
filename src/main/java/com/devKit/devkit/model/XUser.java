@@ -5,7 +5,6 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -14,9 +13,11 @@ import java.util.UUID;
 @Data
 public class XUser extends BaseEntity {
 
+    @Column(name = "nickname")
+    private String nickname;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "erc20")
+    private String erc20;
 
     @Column(name = "email")
     private String email;

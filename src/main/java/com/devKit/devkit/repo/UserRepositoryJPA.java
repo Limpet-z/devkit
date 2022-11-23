@@ -7,8 +7,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserRepositoryJPA extends JpaRepository<XUser, String> {
 
-    XUser findByEmail (String email);
-
+    XUser findByErc20(String erc20);
 
     XUser findByActivationCode(String code);
 }

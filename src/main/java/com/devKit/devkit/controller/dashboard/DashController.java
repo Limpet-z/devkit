@@ -1,4 +1,4 @@
-package com.devKit.devkit.controller;
+package com.devKit.devkit.controller.dashboard;
 
 import com.devKit.devkit.model.XUser;
 import com.devKit.devkit.repo.EngineRepositoryJPA;
@@ -34,7 +34,7 @@ public class DashController {
     @GetMapping("/dashboard")
     public String mainPage(Model model) throws IOException {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        XUser xUser = userRepositoryJPA.findByEmail(user.getUsername());
+        XUser xUser = userRepositoryJPA.findByErc20(user.getUsername());
 
         var wallets = engineRepositoryJPA.findByUsersId(xUser.getId());
         String eth = wallets.getWalletETH();

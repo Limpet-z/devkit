@@ -33,10 +33,20 @@
                     <div class="card">
                         <div class="card-header">
                             <h5 class="card-title">Create-Project</h5>
-                            <h6 class="card-subtitle text-muted">Input data project</h6>
                         </div>
+
                         <div class="card-body">
                             <form th:method="POST" th:action="@{/create-project}">
+                                <div class="row">
+                                    <div class="mb-3 col-md-6">
+                                        <select class="form-select">
+                                            <option>Select type project</option>
+                                            <option>IPO</option>
+                                            <option>ICO</option>
+                                            <option>Shares</option>
+                                        </select>
+                                    </div>
+                                </div>
                                 <div class="row">
                                     <div class="mb-3 col-md-6">
                                         <label class="form-label">Name project</label>

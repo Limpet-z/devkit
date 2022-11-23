@@ -28,16 +28,16 @@ public class CustomUserDetailsService implements UserDetailsService {
     }
 
     @Override
-    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        XUser xUser = userRepositoryJPA.findByEmail(email);
+    public UserDetails loadUserByUsername(String erc20) throws UsernameNotFoundException {
+        XUser xUser = userRepositoryJPA.findByErc20(erc20);
 
         if (xUser == null) {
-            throw new UsernameNotFoundException("Unknown user: " + email);
+            throw new UsernameNotFoundException("Unknown user: " + erc20);
         }
 
         UserDetails user;
         user = User.builder()
-                .username(xUser.getEmail())
+                .username(xUser.getErc20())
                 .password(xUser.getPassword())
                 .roles(xUser.getRole())
                 .build();
@@ -46,7 +46,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     public boolean addUser(XUser user) {
 
-        XUser xUser = userRepositoryJPA.findByEmail(user.getEmail());
+        XUser xUser = userRepositoryJPA.findByErc20(user.getErc20());
 
         if (xUser != null) {
             return false;
@@ -56,7 +56,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         String encPass = encoder.encode(user.getPassword());
-        user.setName(user.getName());
+        user.setNickname(user.getNickname());
         user.setPassword(encPass);
         user.setEmail(user.getEmail());
         user.setStatus(Status.ACTIVE);
@@ -69,7 +69,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         if (!StringUtils.isEmpty(user.getEmail())) {
 
             String message = String.format("Hello, %s! \n" + "Welcome to LIMPET. Please, visit next kink: http://localhost:8080/activate/%s",
-                    user.getName(),
+                    user.getNickname(),
                     user.getActivationCode()
                     );
 
